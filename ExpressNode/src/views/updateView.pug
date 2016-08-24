@@ -1,0 +1,22 @@
+extends layoutTemplate
+mixin form(type,id,name,placeholder,textlabel,value)
+    .form-group
+        label(for=id).col-sm-2.col-label= textlabel
+        .col-sm-10
+            input(type=type,
+            id=id,
+            name=name,
+            placeholder=placeholder,
+            value=value).form-control
+
+block content
+    section.container-fluid
+        form(action='/products/add',method='POST')
+            //fieldset
+            //    legend Ajout d'un produit
+            //    +form("text","productName","name","Nom du produit","Nom :","")
+            //    +form("text","productPrice","price","Prix du produit","Prix :","")
+            //    +form("text","productDesc","desc","Description du produit","Description :","")
+            //    +form("text","productImage","image","L'url d'une image du produit","Image :","")
+            //    .col-sm-offset-2.col-sm-10
+            //        input(type="submit",value="Ajouter").btn.btn-default

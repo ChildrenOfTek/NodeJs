@@ -1,0 +1,34 @@
+extends layoutTemplate
+mixin form(type,id,name,placeholder,textlabel,value)
+    .form-group
+        label(for=id).col-sm-2.col-label= textlabel
+        .col-sm-10
+            input(type=type,
+            id=id,
+            name=name,
+            placeholder=placeholder,
+            value=value).form-control
+
+block content
+    section.container-fluid
+
+    if title == 'Update'
+        -var action = '/products/'+produit.id+'/update'
+        -var legend = "Mettre à jour un produit"
+        -var sub= legend
+
+    else
+        -var action = '/products/add'
+        -var legend =  "Ajout d'un produit"
+        -var sub= "Ajouter"
+
+
+    form(action= action,method='POST')
+        fieldset
+            legend= legend
+            +form("text","productName","name","Nom du produit","Nom :",(produit ? produit.name : ''))
+            +form("text","productPrice","price","Prix du produit","Prix :",(produit ? produit.price : ''))
+            +form("text","productDesc","desc","Description du produit","Description :",(produit ? produit.desc : ''))
+            +form("text","productImage","image","L'url d'une image du produit","Image :",(produit ? produit.image : ''))
+            .col-sm-offset-2.col-sm-10
+                input(type="submit",value=sub).btn.btn-default

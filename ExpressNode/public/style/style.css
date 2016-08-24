@@ -1,0 +1,41 @@
+h1
+{
+    color:cornflowerblue;
+}
+body
+{
+    margin-left: 30px;
+}
+nav>ul
+{
+    display: flex;
+    justify-content: space-around;
+
+}
+.li
+{
+    flex-flow: row nowrap;
+}
+.cont
+{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.cont>div
+{
+
+}
+img
+{
+    height:50px;
+    width:50px;
+}
+.links
+{
+   display:flex;
+   flex-flow: column nowrap;
+}
+.links>a
+{
+    width:100%;
+}

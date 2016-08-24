@@ -1,0 +1,26 @@
+extends layoutTemplate
+block content
+    //block redefinit le contenu, append ecrit a la suite sans remplacer
+        "prepend" lui va ecrire avant le contenu
+    mixin list(name)
+        li.li-liste= name
+    mixin input(type,name,id,place)
+        input(type=type,name=name,id=id,placeholder=place)
+
+    ul
+        +list('foo')
+        +list('bar')
+        +list('baz')
+    +input('text','pseudo','name','Tapez votre pseudo')
+    mixin article(title)
+        .article
+            .article-wrapper
+                h1=title
+                if block
+                    block
+                else
+                    p pas de contenu
+    +article('mon premier article')
+    +article('mon second article')
+        p un paragraphe
+        p un autre paragraphe

@@ -1,0 +1,27 @@
+//layout.pug
+doctype 5
+html(lang='fr')
+    head
+        title #{title}
+        block css
+            link(href="/style/bootstrap.css",rel="stylesheet",type="text/css")
+            link(href="/style/style.css",rel="stylesheet",type="text/css")
+    body
+        header
+            h1 Les produits en folie
+        nav
+            ul
+                li.li
+                    a(href="/accueil") Accueil
+                li.li
+                    a(href="/products") Produits
+                li.li
+                    a(href="/users") Utilisateurs
+        hr
+        block list
+        block content
+            div.col-lg-12 Description du site
+        hr
+        footer
+            h6 imie
+            a(href="#") Mentions légales

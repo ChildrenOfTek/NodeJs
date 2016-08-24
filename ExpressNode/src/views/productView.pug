@@ -1,0 +1,28 @@
+extends layoutTemplate
+
+block content
+    section.container-fluid.cont
+        table.table.table-hover
+            thead
+                th
+                th Numero
+                th Nom
+                th Description
+                th Prix
+                th Options
+            tbody
+
+                tr
+                    td
+                        img(src=produit.image)
+                    td= produit.id
+                    td= produit.name
+                    td= produit.desc
+                    td= produit.price
+                    td.links
+                        a(href="/products/" + produit.id + "/delete") Supprimer
+                        a(href="/products/"+produit.id+"/update") Mettre à jour
+    p
+        a(href="/products/add") Ajouter un produit
+    p
+        a(href="/products/") Retour à la liste

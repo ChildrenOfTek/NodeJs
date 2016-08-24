@@ -1,0 +1,48 @@
+//layout.pug
+doctype 5
+html
+    head
+        title #{title}
+        link(href="/style/style.css",rel="stylesheet",type="text/css")
+    body
+        div(style= "color:green")
+            h1 Salut Amadou
+            h1 #{message}
+            p
+                |pour la presentation
+                |on peut piper mais ca continue le flow du p
+
+            p.class.
+                lol tout ca sera du txt dans cette indentation
+                 a cause du point après la classe
+        .row
+            .column
+                p foo
+            .column
+                p bar
+        div.row: p.column: span Hello world
+
+        input(type="text",name="pseudo",placeholder="Votre pseudo")
+        input(type="submit")
+
+        -var language = "jade"
+        if language === "jade"
+            p awesome
+        else
+            p not awesome
+        -var friends = 10
+        case friends
+            when 0
+                p you have no friends
+            when 1
+                p you have 1 friend
+            default
+                p you have #{friends} friends
+        -var tabs = ['foo','bar','baz']
+        ul
+            //le egal veut dire que ce sera une variable == #{item}
+            each item in tabs
+                li= item
+            for item,i in tabs
+                li= item
+                    div= i

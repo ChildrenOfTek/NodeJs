@@ -1,0 +1,30 @@
+extends layoutTemplate
+
+block list
+    h1 Liste des produits
+block content
+    section.container-fluid.cont
+    table.table.table-hover
+        thead
+            th
+            th Numero
+            th Nom
+            th Description
+            th Prix
+            th Options
+        tbody
+        each prod,i in prods
+            tr
+                td
+                    a(href="/products/"+prod.getId()+"/show")
+                        img(src=prod.image)
+                td= prod.getId()
+                td= prod.getName()
+                td= prod.getDesc()
+                td= prod.getPrice()
+                td.links
+                    a(href="/products/"+prod.getId()+"/delete") Supprimer
+                    a(href="/products/"+prod.getId()+"/show") Details
+                    a(href="/products/"+prod.getId()+"/update") Mettre à jour
+
+    a(href="products/add") Ajouter un produit
